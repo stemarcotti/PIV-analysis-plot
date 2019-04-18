@@ -27,7 +27,7 @@ for k = 1:n_files
     file = listing(k).name;
     directory = listing(k).folder;
     
-    data_temp = load (fullfile ([directory, '/', file]));
+    data_temp = load(fullfile ([directory, '/', file]));
     values = cell2mat(struct2cell(data_temp));
     
     data = [data; values];
