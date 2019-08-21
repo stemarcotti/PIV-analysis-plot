@@ -57,8 +57,11 @@ for file_list = 1:n_files
         
         imshow(currentFrame, [])
         hold on
+        % magenta (track)
         quiver(track(k,1), track(k,2), 200*track_diff_unit(k,1), 200*track_diff_unit(k,2), 'm', 'linewidth', 2, 'maxheadsize', 0.5)
+        % green (sink)
         quiver(track(k,1), track(k,2), 200*s_unit(k,1), 200*s_unit(k,2), 'color', [50 205 50]./255, 'linewidth', 2, 'maxheadsize', 0.5)
+        % orange (max ext)
         quiver(track(k,1), track(k,2), 200*largest_ext_unit(k,1), 200*largest_ext_unit(k,2), 'color', [255 114 86]./255, 'linewidth', 2, 'maxheadsize', 0.5)
         
         im_out = getframe(gcf);
